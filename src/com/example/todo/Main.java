@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    private static ArrayList<String> tasks = new ArrayList<>();
-    private static Scanner scanner = new Scanner(System.in);
+    private static final ArrayList<String> tasks = new ArrayList<>();
+    private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         while (true) {
@@ -35,29 +35,17 @@ public class Main {
     private static void handleChoice(int choice) {
         scanner.nextLine(); // Consume newline left-over
         switch (choice) {
-            case 1:
-                addTask();
-                break;
-            case 2:
-                deleteTask();
-                break;
-            case 3:
-                showTasks();
-                break;
-            case 4:
-                editTask();
-                break;
-            case 5:
-                saveTasks();
-                break;
-            case 6:
-                loadTasks();
-                break;
-            case 7:
+            case 1 -> addTask();
+            case 2 -> deleteTask();
+            case 3 -> showTasks();
+            case 4 -> editTask();
+            case 5 -> saveTasks();
+            case 6 -> loadTasks();
+            case 7 -> {
                 System.out.println("Выход из программы...");
                 System.exit(0);
-            default:
-                System.out.println("Неверный выбор. Попробуйте снова.");
+            }
+            default -> System.out.println("Неверный выбор. Попробуйте снова.");
         }
     }
 
